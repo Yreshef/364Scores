@@ -19,7 +19,6 @@ class TeamViewController: UIViewController {
     private var interactor: FootballDataInteracting!
     private var subscriptions: Set<AnyCancellable> = []
     
-    //TODO: Find a better solution!
     private var teamId: Int!
     private var team: Team! {
         didSet{
@@ -75,6 +74,8 @@ class TeamViewController: UIViewController {
     }
 }
 
+
+// MARK: - TableView Implementation
 
 
 extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
