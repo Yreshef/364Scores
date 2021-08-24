@@ -44,6 +44,8 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(SquadMemberCell.self,
                            forCellReuseIdentifier: SquadMemberCell.cellID)
+        tableView.register(SVGHeaderCell.self,
+                           forCellReuseIdentifier: SVGHeaderCell.cellID)
         
     }
     
@@ -115,6 +117,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //TODO: AssertionFailure
         guard let section = TeamsSections(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
@@ -124,7 +127,14 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case .Logo:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SVGHeaderCell.cellID) as? SVGHeaderCell,
+                  let logoURL = team.crestUrl else {
+                assertionFailure("Failed to dequeue required TeamSummaryCell")
+                return UITableViewCell()
+            }
+            cell.setup(svgURL: logoURL)
+            
+            return cell
         case .Squad:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SquadMemberCell.cellID) as? SquadMemberCell,
                   let squad = team.squad,
