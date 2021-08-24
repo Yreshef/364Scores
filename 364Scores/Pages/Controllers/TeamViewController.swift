@@ -20,14 +20,7 @@ class TeamViewController: UIViewController {
     private var subscriptions: Set<AnyCancellable> = []
     
     //TODO: Find a better solution!
-    var teamId: Int! {
-        didSet {
-            if let id = teamId {
-                print("Team id is: \(id)")
-                fetchTeamData(id: String(id))
-            }
-        }
-    }
+    private var teamId: Int!
     private var team: Team! {
         didSet{
             DispatchQueue.main.async {
@@ -46,6 +39,7 @@ class TeamViewController: UIViewController {
                            forCellReuseIdentifier: SquadMemberCell.cellID)
         tableView.register(SVGHeaderCell.self,
                            forCellReuseIdentifier: SVGHeaderCell.cellID)
+        fetchTeamData(id: teamId)
         
     }
     
@@ -59,17 +53,20 @@ class TeamViewController: UIViewController {
         return vc
     }
     
-    private func fetchTeamData(id: String){
-        interactor.getTeam(id: id).sink { completion in
+    private func fetchTeamData(id: Int){
+        
+        interactor.getTeam(id: String(id)).sink { completion in
             switch completion {
             case .finished: break
             case .failure(let error):
                 print("An error has occured: \(error)")
             }
         } receiveValue: { [weak self] response in
-            //TODO: Implement
             self?.team = response
             if let name = self?.team.name {
+                DispatchQueue.main.async {
+                    self?.title = name
+                }
             }
             if let squad = self?.team.squad {
                 print(squad)
