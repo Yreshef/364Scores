@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WindowManaging {
             return
         }
         self.window = UIWindow(windowScene: scene)
-        setRoot(viewController: vc)
+        let nc = UINavigationController(rootViewController: vc)
+        setRoot(viewController: nc)
 //        guard let _ = (scene as? UIWindowScene) else { return }
     }
 

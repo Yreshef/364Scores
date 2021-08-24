@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import Nuke
 
 class TeamViewController: UIViewController {
     
@@ -117,7 +116,6 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             if let url = team.crestUrl {
                 print(url)
                 if let imageview = cell.imageView {
-                    Nuke.loadImage(with: url, into: imageview)
                 }
             }
         case .Squad:

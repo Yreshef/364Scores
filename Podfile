@@ -5,7 +5,7 @@ target '364Scores' do
   use_frameworks!
 
   pod 'R.swift'
-  pod 'Nuke', :git => 'https://github.com/kean/Nuke', :branch => 'master'
+  pod 'SwiftSVG', '~> 2.0'
 
 
   # Pods for 364Scores

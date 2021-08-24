@@ -23,6 +23,8 @@
 		1A33B78926D53ECC003B507D /* TeamViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78826D53ECC003B507D /* TeamViewSections.swift */; };
 		1A33B78B26D55E5B003B507D /* Matche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78A26D55E5B003B507D /* Matche.swift */; };
 		1A33B78D26D56C3B003B507D /* HeadToHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78C26D56C3B003B507D /* HeadToHead.swift */; };
+		1A33B78F26D57592003B507D /* TeamSummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78E26D57592003B507D /* TeamSummaryCard.swift */; };
+		1A33B79126D577A4003B507D /* TeamSummaryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B79026D577A4003B507D /* TeamSummaryCardCell.swift */; };
 		1A9BF2B226D414ED001AB430 /* HomeScreenSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */; };
 		1A9BF2B426D41D73001AB430 /* GetManyReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */; };
 		1A9BF2B626D4A969001AB430 /* WindowsManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */; };
@@ -49,6 +51,8 @@
 		1A33B78826D53ECC003B507D /* TeamViewSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewSections.swift; sourceTree = "<group>"; };
 		1A33B78A26D55E5B003B507D /* Matche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matche.swift; sourceTree = "<group>"; };
 		1A33B78C26D56C3B003B507D /* HeadToHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadToHead.swift; sourceTree = "<group>"; };
+		1A33B78E26D57592003B507D /* TeamSummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSummaryCard.swift; sourceTree = "<group>"; };
+		1A33B79026D577A4003B507D /* TeamSummaryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSummaryCardCell.swift; sourceTree = "<group>"; };
 		1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenSections.swift; sourceTree = "<group>"; };
 		1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetManyReponse.swift; sourceTree = "<group>"; };
 		1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsManaging.swift; sourceTree = "<group>"; };
@@ -124,8 +128,9 @@
 		1A23B4E626D33D8C008D054F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */,
-				1A33B78826D53ECC003B507D /* TeamViewSections.swift */,
+				1A33B79226D577A8003B507D /* TeamSummary */,
+				1A33B79426D58049003B507D /* Sections */,
+				1A33B79326D58040003B507D /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +231,31 @@
 				1A23B4FE26D35A13008D054F /* DependencyContainer.swift */,
 			);
 			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		1A33B79226D577A8003B507D /* TeamSummary */ = {
+			isa = PBXGroup;
+			children = (
+				1A33B78E26D57592003B507D /* TeamSummaryCard.swift */,
+				1A33B79026D577A4003B507D /* TeamSummaryCardCell.swift */,
+			);
+			path = TeamSummary;
+			sourceTree = "<group>";
+		};
+		1A33B79326D58040003B507D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A33B79426D58049003B507D /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */,
+				1A33B78826D53ECC003B507D /* TeamViewSections.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		69A136A2DF1F9028F8041800 /* Frameworks */ = {
@@ -364,6 +394,7 @@
 				1A33B78926D53ECC003B507D /* TeamViewSections.swift in Sources */,
 				1A23B4D526D33A0B008D054F /* HomeViewController.swift in Sources */,
 				1A23B4D126D33A0B008D054F /* AppDelegate.swift in Sources */,
+				1A33B78F26D57592003B507D /* TeamSummaryCard.swift in Sources */,
 				1A9BF2B626D4A969001AB430 /* WindowsManaging.swift in Sources */,
 				1A9BF2B426D41D73001AB430 /* GetManyReponse.swift in Sources */,
 				1A23B4F826D34468008D054F /* Team.swift in Sources */,
@@ -371,6 +402,7 @@
 				1A23B4FB26D34547008D054F /* Player.swift in Sources */,
 				1A23B4F526D3429F008D054F /* FootballDataInteractor.swift in Sources */,
 				1A33B78D26D56C3B003B507D /* HeadToHead.swift in Sources */,
+				1A33B79126D577A4003B507D /* TeamSummaryCardCell.swift in Sources */,
 				1A23B4EE26D340F4008D054F /* NetworkService.swift in Sources */,
 				1A23B4FF26D35A13008D054F /* DependencyContainer.swift in Sources */,
 				1A33B78B26D55E5B003B507D /* Matche.swift in Sources */,
