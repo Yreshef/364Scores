@@ -42,6 +42,9 @@ class TeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(SquadMemberCell.self,
+                           forCellReuseIdentifier: SquadMemberCell.cellID)
+        
     }
     
     // MARK: - Methods
@@ -81,6 +84,18 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         return TeamsSections.allCases.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let section = TeamsSections(rawValue: indexPath.section) else { return 0 }
+        switch section {
+        case .Logo:
+            return 100
+        case .Squad:
+            return 56
+        case .Fixtures:
+            return 30
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = TeamsSections(rawValue: section) else { return 0 }
         
@@ -100,9 +115,6 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") else {
-            return UITableViewCell()
-        }
         guard let section = TeamsSections(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
@@ -112,19 +124,21 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case .Logo:
-            print("I got a team!")
-            if let url = team.crestUrl {
-                print(url)
-                if let imageview = cell.imageView {
-                }
-            }
+            return UITableViewCell()
         case .Squad:
-            cell.textLabel?.text = team.squad?[indexPath.row].name ?? ""
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SquadMemberCell.cellID) as? SquadMemberCell,
+                  let squad = team.squad,
+                  squad.indices ~= indexPath.row else {
+                assertionFailure("Failed to dequeue required TeamSummaryCell")
+                return UITableViewCell()
+            }
+            let player = squad[indexPath.row]
+            cell.setup(playerName: player.name ?? "N/A")
+            
+            return cell
         case .Fixtures:
-            cell.textLabel?.text = "Games ho"
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
