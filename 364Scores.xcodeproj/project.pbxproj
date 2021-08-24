@@ -20,6 +20,9 @@
 		1A23B4FB26D34547008D054F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23B4FA26D34547008D054F /* Player.swift */; };
 		1A23B4FF26D35A13008D054F /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23B4FE26D35A13008D054F /* DependencyContainer.swift */; };
 		1A23B50126D363AA008D054F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23B50026D363AA008D054F /* Area.swift */; };
+		1A33B78926D53ECC003B507D /* TeamViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78826D53ECC003B507D /* TeamViewSections.swift */; };
+		1A33B78B26D55E5B003B507D /* Matche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78A26D55E5B003B507D /* Matche.swift */; };
+		1A33B78D26D56C3B003B507D /* HeadToHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B78C26D56C3B003B507D /* HeadToHead.swift */; };
 		1A9BF2B226D414ED001AB430 /* HomeScreenSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */; };
 		1A9BF2B426D41D73001AB430 /* GetManyReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */; };
 		1A9BF2B626D4A969001AB430 /* WindowsManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */; };
@@ -43,6 +46,9 @@
 		1A23B4FA26D34547008D054F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		1A23B4FE26D35A13008D054F /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DependencyContainer.swift; path = ../../../../../../../Documents/DependencyContainer.swift; sourceTree = "<group>"; };
 		1A23B50026D363AA008D054F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Area.swift; path = ../../../../../../../Documents/Area.swift; sourceTree = "<group>"; };
+		1A33B78826D53ECC003B507D /* TeamViewSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewSections.swift; sourceTree = "<group>"; };
+		1A33B78A26D55E5B003B507D /* Matche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matche.swift; sourceTree = "<group>"; };
+		1A33B78C26D56C3B003B507D /* HeadToHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadToHead.swift; sourceTree = "<group>"; };
 		1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenSections.swift; sourceTree = "<group>"; };
 		1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetManyReponse.swift; sourceTree = "<group>"; };
 		1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsManaging.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */,
+				1A33B78826D53ECC003B507D /* TeamViewSections.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +214,8 @@
 				1A23B4F726D34468008D054F /* Team.swift */,
 				1A23B50026D363AA008D054F /* Area.swift */,
 				1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */,
+				1A33B78A26D55E5B003B507D /* Matche.swift */,
+				1A33B78C26D56C3B003B507D /* HeadToHead.swift */,
 			);
 			path = FootballData;
 			sourceTree = "<group>";
@@ -352,6 +361,7 @@
 			files = (
 				1A23B50126D363AA008D054F /* Area.swift in Sources */,
 				1A9BF2B226D414ED001AB430 /* HomeScreenSections.swift in Sources */,
+				1A33B78926D53ECC003B507D /* TeamViewSections.swift in Sources */,
 				1A23B4D526D33A0B008D054F /* HomeViewController.swift in Sources */,
 				1A23B4D126D33A0B008D054F /* AppDelegate.swift in Sources */,
 				1A9BF2B626D4A969001AB430 /* WindowsManaging.swift in Sources */,
@@ -360,8 +370,10 @@
 				1A23B4F226D3421D008D054F /* Routes.swift in Sources */,
 				1A23B4FB26D34547008D054F /* Player.swift in Sources */,
 				1A23B4F526D3429F008D054F /* FootballDataInteractor.swift in Sources */,
+				1A33B78D26D56C3B003B507D /* HeadToHead.swift in Sources */,
 				1A23B4EE26D340F4008D054F /* NetworkService.swift in Sources */,
 				1A23B4FF26D35A13008D054F /* DependencyContainer.swift in Sources */,
+				1A33B78B26D55E5B003B507D /* Matche.swift in Sources */,
 				1A23B4D326D33A0B008D054F /* SceneDelegate.swift in Sources */,
 				1A9BF2B826D4BCED001AB430 /* TeamViewController.swift in Sources */,
 			);

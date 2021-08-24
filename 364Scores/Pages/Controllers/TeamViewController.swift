@@ -7,11 +7,13 @@
 
 import UIKit
 import Combine
+import Nuke
 
 class TeamViewController: UIViewController {
     
     // MARK: - Properties | Components
     
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties | Variables
     
@@ -27,7 +29,15 @@ class TeamViewController: UIViewController {
             }
         }
     }
-    private var team: Team!
+    private var team: Team! {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print("Reloaded table view!")
+            }
+        }
+    }
+    private let upcomingFixtures = 10
     
     // MARK: - View Life Cycle
     
@@ -56,7 +66,6 @@ class TeamViewController: UIViewController {
             //TODO: Implement
             self?.team = response
             if let name = self?.team.name {
-                print(name)
             }
             if let squad = self?.team.squad {
                 print(squad)
@@ -69,17 +78,55 @@ class TeamViewController: UIViewController {
 
 extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TeamsSections.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //TODO: Implement
-        return 1
+        guard let section = TeamsSections(rawValue: section) else { return 0 }
+        
+        switch section {
+        case .Logo:
+            return 1
+        case .Squad:
+            if let team = team {
+                if let squad = team.squad {
+                    return squad.count
+                }
+            }
+        case .Fixtures:
+            return upcomingFixtures
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TODO: implement
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") else {
+            return UITableViewCell()
+        }
+        guard let section = TeamsSections(rawValue: indexPath.section) else {
+            return UITableViewCell()
+        }
+        guard let team = team else {
+            return UITableViewCell()
+        }
         
+        switch section {
+        case .Logo:
+            print("I got a team!")
+            if let url = team.crestUrl {
+                print(url)
+                if let imageview = cell.imageView {
+                    Nuke.loadImage(with: url, into: imageview)
+                }
+            }
+        case .Squad:
+            cell.textLabel?.text = team.squad?[indexPath.row].name ?? ""
+        case .Fixtures:
+            cell.textLabel?.text = "Games ho"
+        }
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

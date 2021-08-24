@@ -9,8 +9,6 @@ import Foundation
 import Combine
 
 protocol NetworkServicing {
-//    func request<T>(type: T.Type, route: NetworkRoutes, completion: @escaping (NetworkResult<T>) -> Void)
-    
     func request<T>(type:T.Type, route: NetworkRoutes) -> AnyPublisher<T, NetworkError> where T: Decodable
 }
 
@@ -32,7 +30,7 @@ enum NetworkError: LocalizedError {
 class NetworkService: NetworkServicing {
     private let session: URLSession
     
-    //TODO: Move elsewhere
+    //TODO: Move to enum in system file and make sure its obvious this is not the way it should be
     private var apiKey: String {
         "a741aa4da6f44a20b9e96ebc013721ea"
     }
@@ -45,41 +43,12 @@ class NetworkService: NetworkServicing {
         self.session = session
     }
     
-//    func request<T>(type: T.Type, route: NetworkRoutes, completion: @escaping (NetworkResult<T>) -> Void) where T: Decodable {
-//        guard let url = URL(string: route.urlPath) else {
-//            completion(.failure(error: NetworkError.invalidURL))
-//            return
-//        }
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.addValue(apiKey, forHTTPHeaderField: authHeader)
-//        session.dataTask(with: urlRequest) { data, response, error in
-//            if let error = error {
-//                completion(.failure(error: error))
-//                return
-//            }
-//            if let res = response as? HTTPURLResponse {
-//                guard 200...299 ~= res.statusCode else {
-//                    completion(.failure(error: NetworkError.requestFailure(status: res.statusCode)))
-//                    return
-//                }
-//            }
-//            guard let data = data else {
-//                completion(.failure(error: NetworkError.noData))
-//                return
-//            }
-//            let decode = JSONDecoder()
-//            do {
-//                let result = try decode.decode(T.self, from: data)
-//                completion(.success(result: result))
-//            } catch {
-//                print("Error decoding data: \(error)")
-//                completion(.failure(error: NetworkError.decodingFailure(error:)))
-//            }
-//        }.resume()
-//    }
-    
     func request<T>(type:T.Type, route: NetworkRoutes) -> AnyPublisher<T, NetworkError> where T: Decodable {
-        guard let url = URL(string: route.urlPath) else {
+        var components = URLComponents(string: route.urlPath)
+        components?.queryItems = route.parameters.map({
+            return URLQueryItem(name: $0.key, value: $0.value)
+        })
+        guard let url = components?.url else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
         var urlRequest = URLRequest(url: url)

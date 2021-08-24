@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 enum HomeScreenSections: Int, CaseIterable, CustomStringConvertible {
     
     case Teams
@@ -22,15 +20,5 @@ enum HomeScreenSections: Int, CaseIterable, CustomStringConvertible {
 }
 
 
-enum TeamsSection: Int, CaseIterable, CustomStringConvertible {
-    
-    case TeamName
-    
-    var description: String {
-        switch self {
-        case .TeamName:
-            return "Team name"
-        }
-    }
-}
+
 

@@ -13,6 +13,7 @@ struct Team: Decodable{
     var name: String?
     var shortName: String?
     var tla: String?
+    var crestUrl: String?
     var address: String?
     var phone: String?
     var website: String?

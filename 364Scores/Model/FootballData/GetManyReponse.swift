@@ -11,3 +11,9 @@ struct ManyTeamsResponse: Decodable {
     var count: Int?
     var teams: [Team]?
 }
+
+
+struct ManyMatchResponse: Decodable {
+    var count: Int?
+    var matches: [Match]?
+}
