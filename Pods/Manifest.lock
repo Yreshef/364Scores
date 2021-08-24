@@ -1,0 +1,33 @@
+PODS:
+  - Nuke (10.3.3)
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+
+DEPENDENCIES:
+  - Nuke (from `https://github.com/kean/Nuke`, branch `master`)
+  - R.swift
+
+SPEC REPOS:
+  trunk:
+    - R.swift
+    - R.swift.Library
+
+EXTERNAL SOURCES:
+  Nuke:
+    :branch: master
+    :git: https://github.com/kean/Nuke
+
+CHECKOUT OPTIONS:
+  Nuke:
+    :commit: c0b32b0d7154afceb3fc08b199492f125ff4267e
+    :git: https://github.com/kean/Nuke
+
+SPEC CHECKSUMS:
+  Nuke: d0891b0473684bb6f2900dc867735c63f3fa1eb1
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+
+PODFILE CHECKSUM: bacf312b2feb708bbd34f2fb5bdfbf3aec70ae77
+
+COCOAPODS: 1.10.1
