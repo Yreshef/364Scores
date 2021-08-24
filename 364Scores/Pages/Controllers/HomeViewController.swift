@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
             case .failure(let error):
                 print("An error has occured: \(error)")
             }
-            //TODO: Ponder about this
         } receiveValue: { [weak self] response in
             self?.teams = response.teams ?? []
         }.store(in: &subscriptions)
@@ -103,11 +102,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let team = teams[indexPath.row]
-        if let vc = TeamViewController.create(interactor: interactor) as? TeamViewController{
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true) {
-                vc.teamId = team.id
-            }
+        if let vc = TeamViewController.create(
+            interactor: interactor,
+            teamID: team.id) as? TeamViewController {
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }

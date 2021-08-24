@@ -46,11 +46,11 @@ class TeamViewController: UIViewController {
     
     // MARK: - Methods
     
-    static func create(interactor: FootballDataInteracting) -> UIViewController? {
+    static func create(interactor: FootballDataInteracting, teamID: Int) -> UIViewController? {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TeamVC") as? TeamViewController
         vc?.interactor = interactor
-        
+        vc?.teamId = teamID
         return vc
     }
     
