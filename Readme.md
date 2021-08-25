@@ -27,6 +27,9 @@ Finally I added some fluff with color and icons, and appIcon to make the app loo
 
 All in all, it was a fun exercise, but I have to say that the API was quite problematic, especially with regards to the varying amounts of data sent with each call type, the amount of modelling required and the team's logos in SVG format, which proved to be more problematic in Swift than I anticipated.
 
+Known bug: The team's logo in the team information screen should be centered, not on the left hand side of the screen. SVG format was problematic, and I didn't
+have the time to make it work.
+
 ## Usage Instructions
 
 ### Requirements to run
