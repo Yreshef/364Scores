@@ -16,8 +16,4 @@ struct HeadToHead: Decodable {
 
 }
 
-struct TeamStats: Decodable {
-    var wins: Int?
-    var draws: Int?
-    var losses: Int?
-}
+

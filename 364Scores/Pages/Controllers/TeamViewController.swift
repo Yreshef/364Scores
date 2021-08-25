@@ -97,7 +97,6 @@ class TeamViewController: UIViewController {
                 }
             } receiveValue: { [weak self] response in
                 self?.matches = response.matches
-                print(self?.matches)
             }.store(in: &subscriptions)
     }
     
