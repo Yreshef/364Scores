@@ -32,7 +32,7 @@
 		1A33B7A026D61597003B507D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B79F26D61597003B507D /* R.generated.swift */; };
 		1A33B7A226D61661003B507D /* UpcomingFixureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B7A126D61661003B507D /* UpcomingFixureView.swift */; };
 		1A33B7A926D66096003B507D /* RequiredInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B7A826D66096003B507D /* RequiredInfo.swift */; };
-		1A33B7AB26D66B22003B507D /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B7AA26D66B22003B507D /* UIView+Anchor.swift */; };
+		1A33B7AD26D677AD003B507D /* SVGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A33B7AC26D677AD003B507D /* SVGImageView.swift */; };
 		1A9BF2B226D414ED001AB430 /* HomeScreenSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */; };
 		1A9BF2B426D41D73001AB430 /* GetManyReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */; };
 		1A9BF2B626D4A969001AB430 /* WindowsManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */; };
@@ -68,7 +68,7 @@
 		1A33B79F26D61597003B507D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1A33B7A126D61661003B507D /* UpcomingFixureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFixureView.swift; sourceTree = "<group>"; };
 		1A33B7A826D66096003B507D /* RequiredInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredInfo.swift; sourceTree = "<group>"; };
-		1A33B7AA26D66B22003B507D /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		1A33B7AC26D677AD003B507D /* SVGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageView.swift; sourceTree = "<group>"; };
 		1A9BF2B126D414ED001AB430 /* HomeScreenSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenSections.swift; sourceTree = "<group>"; };
 		1A9BF2B326D41D73001AB430 /* GetManyReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetManyReponse.swift; sourceTree = "<group>"; };
 		1A9BF2B526D4A969001AB430 /* WindowsManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsManaging.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 				1A33B79526D58810003B507D /* TeamView */,
 				1A33B79226D577A8003B507D /* TeamSummary */,
 				1A33B79426D58049003B507D /* Sections */,
-				1A33B79326D58040003B507D /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,14 +260,6 @@
 			path = TeamSummary;
 			sourceTree = "<group>";
 		};
-		1A33B79326D58040003B507D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1A33B7AA26D66B22003B507D /* UIView+Anchor.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		1A33B79426D58049003B507D /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +291,7 @@
 		1A33B7A426D63312003B507D /* LogoView */ = {
 			isa = PBXGroup;
 			children = (
+				1A33B7AC26D677AD003B507D /* SVGImageView.swift */,
 				1A33B79626D5882E003B507D /* SVGHeaderCell.swift */,
 			);
 			path = LogoView;
@@ -479,6 +471,7 @@
 				1A33B7A226D61661003B507D /* UpcomingFixureView.swift in Sources */,
 				1A33B7A926D66096003B507D /* RequiredInfo.swift in Sources */,
 				1A33B7A026D61597003B507D /* R.generated.swift in Sources */,
+				1A33B7AD26D677AD003B507D /* SVGImageView.swift in Sources */,
 				1A23B4F826D34468008D054F /* Team.swift in Sources */,
 				1A23B4F226D3421D008D054F /* Routes.swift in Sources */,
 				1A23B4FB26D34547008D054F /* Player.swift in Sources */,
@@ -488,7 +481,6 @@
 				1A33B79126D577A4003B507D /* TeamSummaryCardCell.swift in Sources */,
 				1A23B4EE26D340F4008D054F /* NetworkService.swift in Sources */,
 				1A23B4FF26D35A13008D054F /* DependencyContainer.swift in Sources */,
-				1A33B7AB26D66B22003B507D /* UIView+Anchor.swift in Sources */,
 				1A33B78B26D55E5B003B507D /* Match.swift in Sources */,
 				1A23B4D326D33A0B008D054F /* SceneDelegate.swift in Sources */,
 				1A9BF2B826D4BCED001AB430 /* TeamViewController.swift in Sources */,

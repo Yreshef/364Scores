@@ -71,38 +71,3 @@ class TeamSummaryCard: UIView {
     }
 
 }
-
-
-class SVGImageView: UIView {
-    private var svgView: UIView? {
-        didSet {
-            oldValue?.removeFromSuperview()
-            if let view = svgView {
-                addSubview(view)
-                view.translatesAutoresizingMaskIntoConstraints = false
-                view.topAnchor.constraint(equalTo: topAnchor).isActive = true
-                view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-                view.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor).isActive = true
-                view.trailingAnchor.constraint(greaterThanOrEqualTo: trailingAnchor).isActive = true
-                view.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-            }
-        }
-    }
-    init() {
-        super.init(frame: .zero)
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func load(url: String) {
-        guard let svgURL = URL(string: url) else { return }
-        let logo = UIView(SVGURL: svgURL) { [weak self] (svgLayer) in
-            guard let self = self else { return }
-            svgLayer.resizeToFit(self.bounds)
-        }
-        self.svgView = logo
-    }
-}
