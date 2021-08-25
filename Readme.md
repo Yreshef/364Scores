@@ -57,4 +57,4 @@ Football information is available from https://www.football-data.org/.
 
 ## Author
 
-<Yreshef>, <Yohai.Reshef.Dev@gmail.com>
+Yreshef, <Yohai.Reshef.Dev@gmail.com>
