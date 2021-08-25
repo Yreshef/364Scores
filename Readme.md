@@ -26,9 +26,9 @@ I wish I had more time to add more functionality such as search, favourite team,
 
 ### Requirements to run
 
-- XCode 12.x.x and above.
-- Device/Simulator running iOS 12 and above.
-- Cocoapods 1.10.0 or above.
+- XCode 12.5.1 and above.
+- Device/Simulator running iOS 14.5 and above.
+- Cocoapods 1.10.1 or above.
 
 ### How to run
 
@@ -57,4 +57,4 @@ Football information is available from https://www.football-data.org/.
 
 ## Author
 
-<Yreshef>, <Yohai.Reshef.Dev@gmail.com>
+Yreshef, <Yohai.Reshef.Dev@gmail.com>
