@@ -19,7 +19,7 @@ The user can select from a list of teams and display it's squad, upcoming fixure
 
 ## Notes from the developer
 
-I started off by rearranging the project file structure. I always prefer to work in a clean environment and so it's important for me that everything is in it's place. After that I started wokring on the design. By looking at the API, I knew I had to use a generic network service since i'll be handling a few types of network requests so I created a network service that accepts any type, with an interactor to act as the middle-man between network logic and controller. This way I get to keep the controller dumb as to how things work behind the scenes, and also make my code scaleable and easy to change.
+I started off by rearranging the project file structure. I always prefer to work in a clean environment and so it's important for me that everything is in it's place. After that I started wokring on the design. By looking at the API, I knew I had to use a generic network service since I'll be handling a few types of network requests so I created a network service that accepts any type, with an interactor to act as the middle-man between network logic and controller. This way I get to keep the controller dumb as to how things work behind the scenes, and also make my code scaleable and easy to change.
 After the ground work was in place I started working on the UI. If I had more time, I'd add more network request types to support search, search(by: league/player), 
 and so on. Another fun addition could have been more information in the team information screen.
 I created a few custom cells to support the information I wanted for each section, and to make it easier to change and add to the view without it affecting functionality. 
