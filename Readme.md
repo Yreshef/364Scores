@@ -33,7 +33,7 @@ I wish I had more time to add more functionality such as search, favourite team,
 ### How to run
 
 - Clone the repository or download the zip.
-- Launch the PROJECT NAME.xcworkspace
+- Launch the 364Scores.xcworkspace
 - Build and run the project on a simulator or a connected device.
 
 ## The Exercise
