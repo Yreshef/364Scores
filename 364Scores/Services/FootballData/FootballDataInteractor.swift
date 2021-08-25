@@ -25,7 +25,6 @@ enum FootballDataRoute: Route {
     case getTeamMatches(id: String, limit: Int = 0)
     
     var urlPath: String {
-        
         switch self {
         case .team(let id):
             return "\(path)/teams/\(id)"

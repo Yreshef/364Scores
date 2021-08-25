@@ -30,15 +30,6 @@ enum NetworkError: LocalizedError {
 class NetworkService: NetworkServicing {
     private let session: URLSession
     
-    //TODO: Move to enum in system file and make sure its obvious this is not the way it should be
-    private var apiKey: String {
-        "a741aa4da6f44a20b9e96ebc013721ea"
-    }
-
-    private var authHeader: String {
-        return "X-Auth-Token"
-    }
-    
     init(session: URLSession = URLSession.shared) {
         self.session = session
     }
@@ -52,7 +43,8 @@ class NetworkService: NetworkServicing {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
         var urlRequest = URLRequest(url: url)
-        urlRequest.addValue(apiKey, forHTTPHeaderField: authHeader)
+        urlRequest.addValue(RequiredInfo.apiKey.description,
+                            forHTTPHeaderField: RequiredInfo.authTokenHeader.description)
         return session
             .dataTaskPublisher(for: urlRequest)
             .tryMap { response -> Data in

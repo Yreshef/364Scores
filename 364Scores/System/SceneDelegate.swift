@@ -7,12 +7,10 @@
 
 import UIKit
 
+@available(iOS 13, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, WindowManaging {
 
     var window: UIWindow?
-   
-    
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = scene as? UIWindowScene else { return }
@@ -22,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WindowManaging {
         self.window = UIWindow(windowScene: scene)
         let nc = UINavigationController(rootViewController: vc)
         setRoot(viewController: nc)
-//        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

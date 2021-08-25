@@ -28,8 +28,8 @@ struct Score: Decodable {
 }
 
 struct Game: Decodable {
-    var homeTeam: String?
-    var awayTeam: String?
+    var homeTeam: Int?
+    var awayTeam: Int?
 }
 
 struct MatchTeam: Decodable {
@@ -40,6 +40,7 @@ struct MatchTeam: Decodable {
 
 struct Match: Decodable{
     var id: Int
+    var competition: Competition
     var season: Season
     var utcDate: String?
     var status: String?
@@ -48,9 +49,9 @@ struct Match: Decodable{
     var group: String?
     var lastUpdated: String?
     var score: Score
-    var halfTime: Game
-    var extraTime: Game
-    var penalties: Game
+//    var halfTime: Game
+//    var extraTime: Game
+//    var penalties: Game
     var homeTeam: MatchTeam
     var awayTeam: MatchTeam
 }

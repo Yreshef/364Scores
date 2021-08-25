@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties | Components
     
     @IBOutlet weak var tableView: UITableView!
+    
     private let emptyLabel: UILabel = {
         let label = UILabel()
         label.text = "No teams to show"
@@ -33,9 +34,7 @@ class HomeViewController: UIViewController {
                     self.tableView?.backgroundView = nil
                 }
                 self.tableView?.reloadData()
-                print("Reloaded table view!")
             }
-            print("Array has changed! 😱😱😱")
         }
     }
     

@@ -8,12 +8,22 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, WindowManaging {
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if #available(iOS 13, *) {
+            // Any initialization before SceneDelegate
+            // From here on out, Scene Delegate will take control
+        } else {
+            //If less than iOS 13, AppDelegate still manages scenes.
+            guard let vc = HomeViewController.create(interactor: DependencyContainer.shared.footballDataInteractor) else {
+                return false
+            }
+            self.window = UIWindow()
+            let nc = UINavigationController(rootViewController: vc)
+            setRoot(viewController: nc)
+        }
         return true
     }
 
